@@ -1,0 +1,14 @@
+{% extends 'partial/layout.html' %}
+
+{% block content %}
+{#    <h1>Hello</h1>#}
+    <form onsubmit="bmi()">
+         <label for="fname">Height:</label><br>
+        <input type="text" id="height" name="height"><br>
+        <label for="lname">Weight:</label><br>
+        <input type="text" id="weight" name="weight">
+        <label for="lname">Weight:</label><br>
+        <input type="text" id="weight" name="weight">
+        <button type="button" onclick="bmi()">Click Me!</button>
+    </form>
+{% endblock %}
