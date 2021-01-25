@@ -1,7 +1,8 @@
 {% extends 'partial/layout.html' %}
 
 {% block content %}
-{#    <h1>Hello</h1>#}
+    <img src="../static/images/Barbell.jpg" class="banner">
+    <div class="container">
     <form onsubmit="bmi()">
          <label for="fname">Height:</label><br>
         <input type="text" id="height" name="height"><br>
@@ -10,5 +11,12 @@
         <label for="lname">Weight:</label><br>
         <input type="text" id="weight" name="weight">
         <button type="button" onclick="bmi()">Click Me!</button>
+
+
     </form>
+    </div>
+
+
+
+
 {% endblock %}
