@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, session, url_for, redirect
 from flask_mysqldb import MySQL
 import os
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn import neighbors, metrics
+import joblib
 
 app = Flask(__name__)
 
@@ -55,10 +59,18 @@ def returnHome():
 @app.route('/testfunction')
 def testfunction():
     # Check if user is loggedin
+    joblib_file = "model.pkl"
+    joblib_LR_model = joblib.load(joblib_file)
+
+    joblib_LR_model
+    print("-----------------------------------------------")
+    testing_value = [[22, 0, 18, 0, 0]]
+    score2 = joblib_LR_model.predict(testing_value)
     if 'loggedin' in session:
         # User is loggedin show them the home page
         print(session)
-        return render_template('loggedIn.html', username=session['username'])
+        #return render_template('loggedIn.html', username=session['username'])
+        return render_template('loggedIn.html', username=score2)
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 if __name__ == '__main__':
