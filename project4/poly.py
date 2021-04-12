@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
+import statsmodels.api as sm
 
 data = pd.read_csv("CardioGoodFitness.csv")
 df = pd.DataFrame(data)
@@ -31,6 +32,10 @@ pr_model = LinearRegression()
 
 # Fit our preprocessed data to the polynomial regression model
 pr_model.fit(X_poly, y)
+X2 = sm.add_constant(X_poly)
+est = sm.OLS(y, X2)
+est2 = est.fit()
+print(est2.summary())
 
 # Store our predicted Humidity values in the variable y_new
 y_pred = pr_model.predict(X_poly)

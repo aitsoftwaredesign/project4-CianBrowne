@@ -1,3 +1,4 @@
+
 .button{
     margin-left: 10px;
     margin-right: 10px;
@@ -13,6 +14,18 @@
     min-height: 100vh;
 }
 .banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     width: 100%;
-    height: 350px;
+    height: 100vh;
+    overflow-x: hidden; //horizontal
+    overflow-y: scroll;
+}
+.form{
+    margin-top: 15px;
+}
+.formSide{
+    margin-left: 10px;
 }

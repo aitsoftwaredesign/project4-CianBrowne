@@ -1,0 +1,210 @@
+{% extends 'partial/layout.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="../static/js/profile.js"></script>
+
+    <script>
+        let program = '{{ message }}'
+        program = parseInt(program)
+        $(document).ready(function () {
+            displayProgram(program)
+        })
+
+    </script>
+    <div id="programFittest">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Deadlift 5x5</td>
+                <td>Bench Press 6x5</td>
+                <td>Squat 8x5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Pull Ups 8x4</td>
+                <td>Tricep pushaway 12x3</td>
+                <td>Stiff leg deadlift 6x5</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Rows 12x3</td>
+                <td>Bicep Curls 12x3</td>
+                <td>Lunges 20x3</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>20 minute run</td>
+                <td>30 minute run</td>
+                <td>20 minute run</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="program2ndFittest">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Pull ups 6x5</td>
+                <td>Bench Press 8x4</td>
+                <td>Squat 8x5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rows 8x4</td>
+                <td>Push up 10x3</td>
+                <td>Hamstring curl 10x3</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Lat Pullover 12x3</td>
+                <td>Bicep Curls 12x3</td>
+                <td>Lunges 20x3</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>15 minute run</td>
+                <td>20 minute run</td>
+                <td>15 minute run</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="program3rdFittest">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Pull ups 4x3</td>
+                <td>Push ups 6x4</td>
+                <td>Squat 8x5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rows 5x5</td>
+                <td>Tricep pushdown 10x3</td>
+                <td>Hamstring curl 10x3</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Face pull 12x3</td>
+                <td>Bicep Curls 12x3</td>
+                <td>Lunges 10x3</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>5 minute run</td>
+                <td>10 minute run</td>
+                <td>5 minute run</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="program4thFittest">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Lat pulldown 12x5</td>
+                <td>Bench Press 8x4</td>
+                <td>Squat 8x5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rows 8x4</td>
+                <td>Incline bench press 10x3</td>
+                <td>Hamstring curl 10x3</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Face pulls 12x3</td>
+                <td>Bicep Curls 12x3</td>
+                <td>Lunges 20x3</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>15 minute run</td>
+                <td>20 minute run</td>
+                <td>15 minute run</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="program5thFittest">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Friday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Lat pulldown 8x5</td>
+                <td>Bench Press 6x4</td>
+                <td>Squat 5x5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Rows 5x4</td>
+                <td>Incline bench press 6x3</td>
+                <td>Hamstring curl 6x3</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Face pulls 8x3</td>
+                <td>Bicep Curls 8x3</td>
+                <td>Lunges 10x3</td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td>10 minute walk</td>
+                <td>20 minute walk</td>
+                <td>10 minute walk</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

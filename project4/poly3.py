@@ -36,10 +36,10 @@ y_pred = pr_model.predict(X_poly)
 
 # Produce a scatter graph of Humidity against Pressure
 
-#plt.scatter(X, y, c = "black")
-#plt.xlabel(xlabel)
-#plt.ylabel("cardio")
-#plt.plot(X, y_pred)
+plt.scatter(X, y, c = "black")
+plt.xlabel(xlabel)
+plt.ylabel("cardio")
+plt.plot(X, y_pred)
 plt.show()
 y_new = pr_model.predict(pre_process.fit_transform([[7655, 56.69, 171]]))
 y_new
