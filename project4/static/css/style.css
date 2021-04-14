@@ -22,6 +22,7 @@
     height: 100vh;
     overflow-x: hidden; //horizontal
     overflow-y: scroll;
+    opacity: 90%;
 }
 .form{
     margin-top: 15px;
@@ -29,3 +30,17 @@
 .formSide{
     margin-left: 10px;
 }
+#btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+   background-color: #1f1e1e;
+  font-size: 24px;
+  padding: 14px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+

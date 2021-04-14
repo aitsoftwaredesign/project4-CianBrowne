@@ -37,19 +37,19 @@ def loginRedirect():
 
 @app.route('/profile', methods=['GET'])
 def profileRedirect():
-    cur = mysql.connection.cursor()
-    print(session)
-    username = session['username']
-    cur.execute("Select * from userCredentials where username = %s", (username,))
-    account = cur.fetchone()
-    mysql.connection.commit()
-    cur.close()
-    print("Account below")
-    print(account)
-    program = account[3]
-    print("Program below")
-    print(program)
     if session:
+        cur = mysql.connection.cursor()
+        print(session)
+        username = session['username']
+        cur.execute("Select * from userCredentials where username = %s", (username,))
+        account = cur.fetchone()
+        mysql.connection.commit()
+        cur.close()
+        print("Account below")
+        print(account)
+        program = account[3]
+        print("Program below")
+        print(program)
         if program == 9:
             return  render_template('loggedIn.html')
         else:
@@ -117,20 +117,24 @@ def returnHome():
 @app.route('/testfunction')
 def testfunction():
     # Check if user is loggedin
-    joblib_file = "productionModel.pkl"
-    joblib_LR_model = joblib.load(joblib_file)
+    if session:
+        joblib_file = "productionModel.pkl"
+        joblib_LR_model = joblib.load(joblib_file)
 
-    joblib_LR_model
-    print("-----------------------------------------------")
-    testing_value = [[22, 0, 0, 0, 1]]
-    score2 = joblib_LR_model.predict(testing_value)
-    if 'loggedin' in session:
-        # User is loggedin show them the home page
-        print(session)
-        #return render_template('loggedIn.html', username=session['username'])
-        return render_template('loggedIn.html', username=score2)
-    # User is not loggedin redirect to login page
-    return redirect(url_for('login'))
+        joblib_LR_model
+        print("-----------------------------------------------")
+        testing_value = [[22, 0, 0, 0, 1]]
+        score2 = joblib_LR_model.predict(testing_value)
+        if 'loggedin' in session:
+            # User is loggedin show them the home page
+            print(session)
+            # return render_template('loggedIn.html', username=session['username'])
+            return render_template('loggedIn.html', username=score2)
+        # User is not loggedin redirect to login page
+        return redirect(url_for('login'))
+    else:
+        return render_template('login.html')
+
 @app.route("/calculateFitness", methods=['POST'])
 def calculateFitness():
     height = int(request.form["heightInput"])
@@ -169,7 +173,7 @@ def calculateFitness():
     cur.close()
     print("Fitness below")
     print(fitness)
-    return render_template('Profile.html')
+    return render_template('profile.html', message=fitness)
 
 def calculateBMI(height, weight):
     height = height/100
